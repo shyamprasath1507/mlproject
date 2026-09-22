@@ -109,7 +109,7 @@ with col2:
                 # In Docker, we might need a different URL if Streamlit reaches out from container vs browser.
                 # Since Streamlit makes requests from the server side, it can use http://localhost:8000 
                 # if they are in the SAME container (which they are, per the requirements for entrypoint.sh).
-                response = requests.post("http://localhost:8000/predict", json=payload)
+                response = requests.post("https://mlproject-zae2.onrender.com/predict", json=payload)
                 response.raise_for_status()
                 
                 result = response.json()
